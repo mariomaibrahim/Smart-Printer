@@ -1,0 +1,162 @@
+/* استيراد الخط */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+}
+
+/* الحاوية الرئيسية */
+.container {
+  position: relative;
+  width: 850px;
+  height: 550px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.container_2 {
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+/* صندوق النماذج */
+.form-box {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+  padding: 50px;
+}
+
+/* نموذج تسجيل الدخول */
+.login {
+  left: 0;
+  z-index: 2;
+}
+
+/* نموذج التسجيل */
+.register {
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* زر التبديل بين النماذج */
+.toggle-box {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+}
+
+.toggle-box h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.toggle-box p {
+  font-size: 14px;
+}
+
+.toggle-box .btn {
+  background: white;
+  color: #2a5298;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.toggle-box .btn:hover {
+  background: #f1f1f1;
+}
+
+/* زر تسجيل الدخول */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #2a5298;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e3c72;
+}
+
+/* صندوق الإدخال */
+.input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* الأيقونات داخل الحقول */
+.input-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: gray;
+}
+
+/* رابط "نسيت كلمة المرور" */
+.forgot-link {
+  text-align: right;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.forgot-link a {
+  color: #2a5298;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+.forgot-link {
+  display: flex;
+  color: gray;
+  word-spacing: 16;
+}
