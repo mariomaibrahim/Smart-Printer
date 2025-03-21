@@ -1,4 +1,5 @@
-# Smart Printer | <img src="logo/printer.png" alt="Smart Printer Logo" width="100">
+# Smart Printer
+<img src="logo/printer.png" alt="Smart Printer Logo" width="100">
 
 ### AITP team | <img src="logo/aitp.png" alt="AITP Logo" width="70">
 
