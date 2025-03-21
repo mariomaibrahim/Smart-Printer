@@ -1,9 +1,8 @@
-<h1 align="center">Smart Printer</h1>
-
 <p align="center">
   <img src="logo/printer.png" alt="Smart Printer Logo" width="200">
 </p>
 
+<h1 align="center">Smart Printer</h1>
 
 <p align="center">
   <strong>Developed by</strong>
