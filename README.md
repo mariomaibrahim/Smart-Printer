@@ -12,7 +12,7 @@
   <img src="logo/aitp.png" alt="AITP Logo" width="140">
 </p>
 
-<h3 align="center">Team AITP</h3>
+<h3 align="center">AITP Team</h3>
 
 ---
 
