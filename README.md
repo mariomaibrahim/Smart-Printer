@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo/printer.png" alt="Smart Printer Logo" width="120">
+  <img src="logo/printer.png" alt="Smart Printer Logo" width="200">
 </p>
 
 <h1 align="center">Smart Printer</h1>
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="logo/aitp.png" alt="AITP Logo" width="90">
+  <img src="logo/aitp.png" alt="AITP Logo" width="140">
 </p>
 
 <h3 align="center">Team AITP</h3>
