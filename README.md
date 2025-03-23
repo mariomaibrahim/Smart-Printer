@@ -1,7 +1,7 @@
 # 🖨️ **Smart Printer**  
 
 <p align="center">
-  <img src="logo/printer.png" alt="Smart Printer Logo" width="170">
+  <img src="logo/IMG-20250320-WA0018.png" alt="Smart Printer Logo" width="170">
 </p>
 
 ---
