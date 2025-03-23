@@ -1,4 +1,4 @@
-# 🖨️ **Smart Printer**  
+# **Smart Printer**  
 
 <p align="center">
   <img src="logo/IMG-20250320-WA0018.png" alt="Smart Printer Logo" width="170">
@@ -6,12 +6,12 @@
 
 ---
 
-## 📌 **Overview**  
+## **Overview**  
 **Smart Printer** is a self-service printing system that operates 24/7 within the university. Students can upload their files via the website, pay electronically, and collect their prints easily and securely without human intervention.  
 
 ---
 
-## 🚀 **Features**  
+## **Features**  
 ✔ **Upload files via the website** – Supports multiple formats such as PDF, DOCX, and images  
 ✔ **Integrated electronic payment system** – Prepaid balance and direct payment options  
 ✔ **Print customization** – Select number of copies, paper size, and print type  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🏗️ **Technologies Used**  
+## **Technologies Used**  
 - **Front-End:** HTML, CSS, JavaScript, Bootstrap  
 - **Back-End:** PHP (Laravel)  
 - **Database:** MySQL  
