@@ -1,7 +1,7 @@
 # **Smart Printer**  
 
 <p align="center">
-  <img src="logo/IMG-20250320-WA0018.png" alt="Smart Printer Logo" width="170">
+  <img src="logo_printer/logo .png" alt="Smart Printer Logo" width="170">
 </p>
 
 ---
@@ -35,7 +35,7 @@
 <h5 align="center">Developed by</h5>
 
 <p align="center">
-  <img src="logo/aitp.png" alt="AITP Logo" width="150">
+  <img src="logo_printer/aitp logo.png" alt="AITP Logo" width="150">
 </p>
 
 <h3 align="center">AITP Team</h3>
