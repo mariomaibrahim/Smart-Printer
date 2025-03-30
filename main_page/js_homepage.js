@@ -23,3 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("services").scrollIntoView({ behavior: "smooth" });
     };
 });
+
+ // Fade-in steps on scroll
+ document.addEventListener('DOMContentLoaded', () => {
+    const steps = document.querySelectorAll('.step');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200); // Staggered appearance
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3 // Trigger when 30% of the step is visible
+    });
+
+    steps.forEach(step => observer.observe(step));
+});
