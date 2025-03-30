@@ -6,7 +6,6 @@
     <title>Smart Printer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="home_page_style.css">
-
 </head>
 <body>
     <!-- Header -->
@@ -19,9 +18,9 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="bin">
@@ -40,13 +39,12 @@
         <button class="close-sidebar">✕</button>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#">Login</a></li>
             <li><a href="#">Cart</a></li>
         </ul>
-
     </div>
 
     <!-- Hero Section -->
@@ -63,7 +61,7 @@
                 <button class="btn btn-primary">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </button>
-                <button class="btn btn-secondary">
+                <button class="btn btn-secondary" onclick="scrollToServices()">
                     <i class="fas fa-info-circle"></i> Discover More
                 </button>
             </div>
@@ -73,7 +71,7 @@
     <!-- Main Content -->
     <main class="container">
         <!-- About Section -->
-        <section class="about-section">
+        <section id="about" class="about-section">
             <h2>About Smart Printer</h2>
             <div class="about-flex">
                 <div class="about-text">
@@ -95,7 +93,7 @@
         </section>
 
         <!-- Features Section -->
-        <section>
+        <section id="services">
             <h2>Our Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
@@ -136,7 +134,36 @@
                 </div>
             </div>
         </section>
-    </main>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works-section">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">Complete Your Printing in 4 Simple Steps!</p>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="icon"><i class="fas fa-upload"></i></div>
+                    <h3>Upload Your Document</h3>
+                    <p>Upload your document in PDF format or any other supported format.</p>
+                </div>
+                <div class="step">
+                    <div class="icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Choose Printing Options</h3>
+                    <p>Select paper size, quality, color options, and other preferences.</p>
+                </div>
+                <div class="step">
+                    <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Complete Payment</h3>
+                    <p>Pay securely for your printing order using various payment methods.</p>
+                </div>
+                <div class="step">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Receive Confirmation</h3>
+                    <p>Get an email with order details and pickup/delivery information.</p>
+                </div>
+            </div>
+        </section>
+        
+    <script src="js_homepage.js"></script>
 </body>
-<script src="js_homepage.js"></script>
 </html>
