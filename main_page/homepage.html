@@ -1,169 +1,598 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Printer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="home_page_style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="homepage.html"> 
-                <img src="LOGO T.png" alt="Smart Printer Logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="bin">
-            <a href="#" data-tooltip="Login">
-                <img src="circle-user-solid (2).svg" alt="Login">
-            </a>            
-            <a href="#" data-tooltip="Shopping Cart">
-                <img src="cart-arrow-down-solid (3).svg" alt="Shopping Cart">
-            </a>
-        </div>
-        <button class="sidebar-toggle">☰</button>
-    </header>
+    <title>Smart Printer - About Us</title>
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --accent-color: #ff006e;
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --bg-color: #f8f9fa;
+        }
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <button class="close-sidebar">✕</button>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cart</a></li>
-        </ul>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo svg {
+            margin-right: 10px;
+        }
+
+        .language-selector {
+            position: relative;
+            margin-left: auto;
+        }
+
+        .language-selector select {
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 2px solid var(--primary-color);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-color);
+            margin-bottom: 60px;
+        }
+
+        .shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            top: -100px;
+            right: -50px;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--light-color);
+            transform: rotate(45deg);
+            bottom: -50px;
+            left: 10%;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background-color: var(--accent-color);
+            top: 20%;
+            left: 20%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .about-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-color);
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .about-card p {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            margin-right: 15px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .language-selector {
+                margin: 20px 0 0 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .about-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9V2h12v7"></path>
+                    <rect x="4" y="14" width="16" height="8" rx="1"></rect>
+                    <path d="M7 9h10v5H7z"></path>
+                </svg>
+                SmartPrint Pro
+            </div>
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="en">Revolutionizing Printing Technology</h1>
+                <h1 class="es hidden">Revolucionando la Tecnología de Impresión</h1>
+                <h1 class="fr hidden">Révolutionner la Technologie d'Impression</h1>
+                <h1 class="de hidden">Revolution der Drucktechnologie</h1>
+                <h1 class="zh hidden">革新打印技术</h1>
+
+                <p class="en">SmartPrint Pro combines cutting-edge AI with superior printing hardware to deliver an
+                    unmatched experience for businesses and creative professionals.</p>
+                <p class="es hidden">SmartPrint Pro combina IA de vanguardia con hardware de impresión superior para
+                    ofrecer una experiencia inigualable para empresas y profesionales creativos.</p>
+                <p class="fr hidden">SmartPrint Pro combine une IA de pointe avec un matériel d'impression supérieur
+                    pour offrir une expérience inégalée aux entreprises et aux professionnels créatifs.</p>
+                <p class="de hidden">SmartPrint Pro kombiniert modernste KI mit überlegener Druckhardware, um ein
+                    unvergleichliches Erlebnis für Unternehmen und Kreativprofis zu bieten.</p>
+                <p class="zh hidden">SmartPrint Pro将尖端人工智能与卓越的打印硬件相结合，为企业和创意专业人士提供无与伦比的体验。</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                </div>
+                <h3 class="en">Our Vision</h3>
+                <h3 class="es hidden">Nuestra Visión</h3>
+                <h3 class="fr hidden">Notre Vision</h3>
+                <h3 class="de hidden">Unsere Vision</h3>
+                <h3 class="zh hidden">我们的愿景</h3>
+
+                <p class="en">We envision a world where printing technology seamlessly integrates with digital
+                    workflows, enhancing productivity and creativity while prioritizing sustainability.</p>
+                <p class="es hidden">Imaginamos un mundo donde la tecnología de impresión se integre perfectamente con
+                    los flujos de trabajo digitales, mejorando la productividad y la creatividad mientras se prioriza la
+                    sostenibilidad.</p>
+                <p class="fr hidden">Nous envisageons un monde où la technologie d'impression s'intègre parfaitement aux
+                    flux de travail numériques, améliorant la productivité et la créativité tout en privilégiant la
+                    durabilité.</p>
+                <p class="de hidden">Wir stellen uns eine Welt vor, in der Drucktechnologie nahtlos in digitale
+                    Arbeitsabläufe integriert ist und dabei Produktivität und Kreativität fördert und gleichzeitig
+                    Nachhaltigkeit priorisiert.</p>
+                <p class="zh hidden">我们设想一个印刷技术与数字工作流程无缝集成的世界，在优先考虑可持续性的同时提高生产力和创造力。</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 15-4-4 6-6 4 4"></path>
+                        <path d="m22 15-4-4-6 6 4 4"></path>
+                        <path d="M14 9 9 14"></path>
+                    </svg>
+                </div>
+                <h3 class="en">Our Mission</h3>
+                <h3 class="es hidden">Nuestra Misión</h3>
+                <h3 class="fr hidden">Notre Mission</h3>
+                <h3 class="de hidden">Unsere Mission</h3>
+                <h3 class="zh hidden">我们的使命</h3>
+
+                <p class="en">To revolutionize printing by creating intelligent devices that anticipate needs, optimize
+                    resources, and deliver exceptional quality while reducing environmental impact.</p>
+                <p class="es hidden">Revolucionar la impresión creando dispositivos inteligentes que anticipan las
+                    necesidades, optimizan los recursos y ofrecen una calidad excepcional mientras reducen el impacto
+                    ambiental.</p>
+                <p class="fr hidden">Révolutionner l'impression en créant des appareils intelligents qui anticipent les
+                    besoins, optimisent les ressources et offrent une qualité exceptionnelle tout en réduisant l'impact
+                    environnemental.</p>
+                <p class="de hidden">Die Revolution des Druckens durch intelligente Geräte, die Bedürfnisse
+                    antizipieren, Ressourcen optimieren und außergewöhnliche Qualität liefern, während die
+                    Umweltbelastung reduziert wird.</p>
+                <p class="zh hidden">通过创造能够预测需求、优化资源并提供卓越品质的智能设备来革新打印技术，同时减少环境影响。</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </div>
+                <h3 class="en">Innovation</h3>
+                <h3 class="es hidden">Innovación</h3>
+                <h3 class="fr hidden">Innovation</h3>
+                <h3 class="de hidden">Innovation</h3>
+                <h3 class="zh hidden">创新</h3>
+
+                <p class="en">We're constantly pushing the boundaries of what's possible in printing technology,
+                    integrating AI, cloud connectivity, and sustainable materials in our product development.</p>
+                <p class="es hidden">Constantemente ampliamos los límites de lo posible en tecnología de impresión,
+                    integrando IA, conectividad en la nube y materiales sostenibles en el desarrollo de nuestros
+                    productos.</p>
+                <p class="fr hidden">Nous repoussons constamment les limites du possible dans la technologie
+                    d'impression, en intégrant l'IA, la connectivité cloud et les matériaux durables dans le
+                    développement de nos produits.</p>
+                <p class="de hidden">Wir erweitern ständig die Grenzen des Möglichen in der Drucktechnologie und
+                    integrieren KI, Cloud-Konnektivität und nachhaltige Materialien in unsere Produktentwicklung.</p>
+                <p class="zh hidden">我们不断突破打印技术的可能性界限，在产品开发中整合人工智能、云连接和可持续材料。</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="section-title">
+                <h2 class="en">SmartPrint Features</h2>
+                <h2 class="es hidden">Características de SmartPrint</h2>
+                <h2 class="fr hidden">Fonctionnalités SmartPrint</h2>
+                <h2 class="de hidden">SmartPrint Funktionen</h2>
+                <h2 class="zh hidden">SmartPrint 功能</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2Z"></path>
+                            <path d="M21 12a9 9 0 0 0-9-9v9h9Z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4 class="en">AI-Powered Optimization</h4>
+                        <h4 class="es hidden">Optimización Impulsada por IA</h4>
+                        <h4 class="fr hidden">Optimisation Alimentée par l'IA</h4>
+                        <h4 class="de hidden">KI-gestützte Optimierung</h4>
+                        <h4 class="zh hidden">AI驱动的优化</h4>
+
+                        <p class="en">Smart algorithms that adjust color, density and layout for perfect prints every
+                            time.</p>
+                        <p class="es hidden">Algoritmos inteligentes que ajustan color, densidad y diseño para
+                            impresiones perfectas cada vez.</p>
+                        <p class="fr hidden">Algorithmes intelligents qui ajustent la couleur, la densité et la mise en
+                            page pour des impressions parfaites à chaque fois.</p>
+                        <p class="de hidden">Intelligente Algorithmen, die Farbe, Dichte und Layout für jedes Mal
+                            perfekte Drucke anpassen.</p>
+                        <p class="zh hidden">智能算法可调整颜色、密度和布局，每次都能完美打印。</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4 class="en">Smart Connectivity</h4>
+                        <h4 class="es hidden">Conectividad Inteligente</h4>
+                        <h4 class="fr hidden">Connectivité Intelligente</h4>
+                        <h4 class="de hidden">Intelligente Konnektivität</h4>
+                        <h4 class="zh hidden">智能连接</h4>
+
+                        <p class="en">Seamlessly connect to all your devices via Wi-Fi, Bluetooth, or cloud services.
+                        </p>
+                        <p class="es hidden">Conéctese sin problemas a todos sus dispositivos a través de Wi-Fi,
+                            Bluetooth o servicios en la nube.</p>
+                        <p class="fr hidden">Connectez-vous facilement à tous vos appareils via Wi-Fi, Bluetooth ou
+                            services cloud.</p>
+                        <p class="de hidden">Verbinden Sie sich nahtlos mit all Ihren Geräten über WLAN, Bluetooth oder
+                            Cloud-Dienste.</p>
+                        <p class="zh hidden">通过Wi-Fi、蓝牙或云服务无缝连接到您的所有设备。</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4 class="en">Eco-Friendly Design</h4>
+                        <h4 class="es hidden">Diseño Ecológico</h4>
+                        <h4 class="fr hidden">Conception Écologique</h4>
+                        <h4 class="de hidden">Umweltfreundliches Design</h4>
+                        <h4 class="zh hidden">环保设计</h4>
+
+                        <p class="en">Energy-efficient operation with recyclable components and sustainable ink options.
+                        </p>
+                        <p class="es hidden">Funcionamiento energéticamente eficiente con componentes reciclables y
+                            opciones de tinta sostenibles.</p>
+                        <p class="fr hidden">Fonctionnement économe en énergie avec des composants recyclables et des
+                            options d'encre durables.</p>
+                        <p class="de hidden">Energieeffizienter Betrieb mit recycelbaren Komponenten und nachhaltigen
+                            Tintenoptionen.</p>
+                        <p class="zh hidden">节能运行，可回收组件和可持续墨水选择。</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                            <path d="M8 14h.01"></path>
+                            <path d="M16 14h.01"></path>
+                            <path d="M12 16v2"></path>
+                            <path d="M12 8v2"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4 class="en">Automated Maintenance</h4>
+                        <h4 class="es hidden">Mantenimiento Automatizado</h4>
+                        <h4 class="fr hidden">Maintenance Automatisée</h4>
+                        <h4 class="de hidden">Automatisierte Wartung</h4>
+                        <h4 class="zh hidden">自动维护</h4>
+
+                        <p class="en">Self-diagnosing systems that prevent issues before they occur and optimize printer
+                            lifespan.</p>
+                        <p class="es hidden">Sistemas de autodiagnóstico que previenen problemas antes de que ocurran y
+                            optimizan la vida útil de la impresora.</p>
+                        <p class="fr hidden">Systèmes d'autodiagnostic qui préviennent les problèmes avant qu'ils ne
+                            surviennent et optimisent la durée de vie de l'imprimante.</p>
+                        <p class="de hidden">Selbstdiagnosesysteme, die Probleme verhindern, bevor sie auftreten, und
+                            die Lebensdauer des Druckers optimieren.</p>
+                        <p class="zh hidden">自诊断系统，在问题发生前预防并优化打印机寿命。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p class="en">© 2025 SmartPrint Pro. All rights reserved.</p>
+                <p class="es hidden">© 2025 SmartPrint Pro. Todos los derechos reservados.</p>
+                <p class="fr hidden">© 2025 SmartPrint Pro. Tous droits réservés.</p>
+                <p class="de hidden">© 2025 SmartPrint Pro. Alle Rechte vorbehalten.</p>
+                <p class="zh hidden">© 2025 SmartPrint Pro. 保留所有权利。</p>
+            </div>
+        </footer>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-container">
-        <div>
-            <div class="hero-icon">
-                <i class="fas fa-print fa-2x text-blue-400"></i>
-            </div>
-            <div class="hero-text">
-                <h1>Smart Printer</h1>
-                <p>Innovative printing solutions designed for modern digital work. Fast printing at affordable costs for all your needs.</p>
-            </div>
-            <div class="btn-group">
-                <button class="btn btn-primary">
-                    <i class="fas fa-sign-in-alt"></i> Login
-                </button>
-                <button class="btn btn-secondary" onclick="scrollToServices()">
-                    <i class="fas fa-info-circle"></i> Discover More
-                </button>
-            </div>
-        </div>
-    </section>
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById('language-select').value;
+            const languages = ['en', 'es', 'fr', 'de', 'zh'];
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <h2>About Smart Printer</h2>
-            <div class="about-flex">
-                <div class="about-text">
-                    <p>
-                        Smart Printer is a revolutionary printing technology designed to transform your document management experience. 
-                        Our advanced solution combines intelligent software and cutting-edge hardware to provide seamless, efficient, and high-quality printing solutions.
-                    </p>
-                    <p>
-                        We understand the challenges of modern printing needs and have developed a comprehensive system 
-                        that simplifies document processing, reduces waste, and increases productivity for both businesses and individuals.
-                    </p>
-                </div>
-                <div class="about-image">
-                    <div class="about-img">
-                        <img src="bbb.jpg" alt="Smart Printer">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="services">
-            <h2>Our Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt fa-2x" style="color: #3b82f6;"></i>
-                    </div>
-                    <h3>Smart Document Management</h3>
-                    <p>
-                        Organize, store, and retrieve documents easily with our intelligent system designed for maximum efficiency.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs fa-2x" style="color: #3b82f6;"></i>
-                    </div>
-                    <h3>Advanced Customization</h3>
-                    <p>
-                        Customize your printing experience with intuitive settings and preferences that adapt to your specific needs.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-print fa-2x" style="color: #3b82f6;"></i>
-                    </div>
-                    <h3>High-Quality Printing</h3>
-                    <p>
-                        Enjoy clear and precise prints with advanced printing technology that delivers professional results every time.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-layer-group fa-2x" style="color: #3b82f6;"></i>
-                    </div>
-                    <h3>Multi-Platform Support</h3>
-                    <p>
-                        Connect and print from any device - smartphones, tablets, and computers with seamless cross-platform integration.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works-section">
-            <h2>How It Works</h2>
-            <p class="section-subtitle">Complete Your Printing in 4 Simple Steps!</p>
-            
-            <div class="steps-container">
-                <div class="step">
-                    <div class="icon"><i class="fas fa-upload"></i></div>
-                    <h3>Upload Your Document</h3>
-                    <p>Upload your document in PDF format or any other supported format.</p>
-                </div>
-                <div class="step">
-                    <div class="icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>Choose Printing Options</h3>
-                    <p>Select paper size, quality, color options, and other preferences.</p>
-                </div>
-                <div class="step">
-                    <div class="icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>Complete Payment</h3>
-                    <p>Pay securely for your printing order using various payment methods.</p>
-                </div>
-                <div class="step">
-                    <div class="icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Receive Confirmation</h3>
-                    <p>Get an email with order details and pickup/delivery information.</p>
-                </div>
-            </div>
-        </section>
-        
-    <script src="js_homepage.js"></script>
+            languages.forEach(lang => {
+                const elements = document.querySelectorAll('.' + lang);
+                elements.forEach(el => {
+                    if (lang === language) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
+
 </html>
